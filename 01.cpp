@@ -12,14 +12,17 @@ int main()
         cin>>v[i];
     cin>>x;
     i=1;
-    while(v[i]<x)
+    while(v[i]<=x)
         i++;
+
     if(i==n+1)
         v[i]=x;
-
-    v[i]=x;
-    for(j=n; j>=i; j--)
-        v[j+1]=v[j];
+    else
+    {
+        for(j=n; j>=i; j--)
+            v[j+1]=v[j];
+        v[i]=x;
+    }
     for(i=1; i<=n+1; i++)
         cout<<v[i]<<' ';
 
